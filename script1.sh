@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 install_brew(){
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,8 +50,8 @@ install_amazonJDK(){
 
 
 
-git_dir=~/src1/cloudally/zion
-emq_dir=~/src1
+git_dir=~/src/cloudally/zion
+emq_dir=~/src
 install=~/installlll
 
 param_if=$@
