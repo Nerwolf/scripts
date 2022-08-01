@@ -7,15 +7,19 @@ install_brew(){
 install_tunnelblick(){
     brew install --cask tunnelblick
     }
+
 install_git(){
     brew install git
     }
+
 install_IDEA(){
     brew install --cask intellij-idea-ce 
     }
+
 install_robo_3t(){
     brew install --cask robo-3t
     }    
+
 install_maven(){
     brew install maven
     }
@@ -24,10 +28,10 @@ install_nessus(){
     brew install --cask tenable-nessus-agent
     }   
 
-
 install_nvm_node(){
     brew install nvm
     }
+
 install_activemq(){
     mkdir -p $install
     cd $install
@@ -38,6 +42,7 @@ install_activemq(){
     mv apache-activemq-5.16.2 $emq_dir
     rm -r $install
     }
+
 install_amazonJDK(){
     mkdir -p $install
     cd $install
@@ -46,8 +51,6 @@ install_amazonJDK(){
     sudo installer -pkg amazon-corretto-15-x64-macos-jdk.pkg -target LocalSystem
     rm -r $install
     }
-
-
 
 
 git_dir=~/src/cloudally/zion
