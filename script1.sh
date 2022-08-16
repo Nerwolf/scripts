@@ -18,6 +18,12 @@ install_IDEA(){
 
 install_robo_3t(){
     brew install --cask robo-3t
+    mkdir -m 755 ~/.3T
+    cd ~/.3T
+    mkdir -m 755 1.4.4
+    echo "3412810664113603438" > robo3t.key
+    cd cd ~/inst
+    cp ./robo3t.json ~/.3T/robo-3t/1.4.4/
     }    
 
 install_maven(){
