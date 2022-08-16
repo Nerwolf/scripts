@@ -8,8 +8,7 @@ install_tunnelblick(){
     brew install --cask tunnelblick
     cd ~/inst/tunel_config/config
     cp -r *.tblk ~/Library/Application\ Support/Tunnelblick/Configurations/
-   
-   }   
+    }   
 #3
 install_git(){
     brew install git
