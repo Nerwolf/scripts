@@ -1,21 +1,26 @@
 #!/bin/bash
-
+#1
 install_brew(){
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     }
-
+#2
 install_tunnelblick(){
     brew install --cask tunnelblick
-    }
-
+    cd ~/inst/tunel_config/config
+    cp -r *.tblk ~/Library/Application\ Support/Tunnelblick/Configurations/
+   
+   }   
+#3
 install_git(){
     brew install git
     }
-
+#4
 install_IDEA(){
     brew install --cask intellij-idea-ce 
+    cd ~/inst/idea/IdeaIC2022.2
+    cp -r  ~/inst/idea/IdeaIC2022.2 ~/Library/Application\ Support/Tunnelblick/Configurations/
     }
-
+#5
 install_robo_3t(){
     brew install --cask robo-3t
     mkdir -m 755 ~/.3T
@@ -25,19 +30,19 @@ install_robo_3t(){
     cd cd ~/inst
     cp ./robo3t.json ~/.3T/robo-3t/1.4.4/
     }    
-
+#5
 install_maven(){
     brew install maven
     }
-
+#6
 install_nessus(){
     brew install --cask tenable-nessus-agent
     }   
-
+#7
 install_nvm_node(){
     brew install nvm
     }
-
+#8
 install_activemq(){
     mkdir -p $install
     cd $install
@@ -48,7 +53,7 @@ install_activemq(){
     mv apache-activemq-5.16.2 $emq_dir
     rm -r $install
     }
-
+#9
 install_amazonJDK(){
     mkdir -p $install
     cd $install
