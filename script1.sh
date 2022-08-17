@@ -62,11 +62,17 @@ install_amazonJDK(){
     rm -r $install
     }
 #11
-Install_Compass(){
+install_Compass(){
 brew install --cask mongodb-compass
 }
-
-
+#12
+install_mpm(){
+    cp ~/inst/cloudally 
+    cd ~/cloudally/CAWeb/cloudallyPartnerPortal/src/main/webapp
+    npm install
+   #npm run dist:dev 
+   #npm run start
+   }
 git_dir=~/src/cloudally/zion
 emq_dir=~/src
 install=~/installlll
@@ -83,7 +89,8 @@ if [ -z "$param_if" ] ; then
     install_nvm_node|| exit 1
     install_activemq || exit 1
     install_amazonJDK || exit 1
-    Install_Compass || exit 1
+    install_Compass || exit 1
+    install_mpm|| exit 1
 fi
 
 echo "end"
