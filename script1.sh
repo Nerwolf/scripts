@@ -100,7 +100,7 @@ case $param_case in
     tunnelblick) install_tunnelblick || exit 1;;
     git) install_git || exit 1;;
     idea) install_IDEA || exit 1;;
-    robo) install_robo_3t || exit 1;;
+    compass) install_Compass || exit 1;;
     maven) install_maven|| exit 1;;
     nessus) install_nessus|| exit 1;;
     node) install_nvm_node|| exit 1;;
