@@ -29,19 +29,19 @@ install_robo_3t(){
     cd cd ~/inst
     cp ./robo3t.json ~/.3T/robo-3t/1.4.4/
     }    
-#5
+#6
 install_maven(){
     brew install maven
     }
-#6
+#7
 install_nessus(){
     brew install --cask tenable-nessus-agent
     }   
-#7
+#8
 install_nvm_node(){
     brew install nvm
     }
-#8
+#9
 install_activemq(){
     mkdir -p $install
     cd $install
@@ -52,7 +52,7 @@ install_activemq(){
     mv apache-activemq-5.16.2 $emq_dir
     rm -r $install
     }
-#9
+#10
 install_amazonJDK(){
     mkdir -p $install
     cd $install
@@ -61,6 +61,10 @@ install_amazonJDK(){
     sudo installer -pkg amazon-corretto-15-x64-macos-jdk.pkg -target LocalSystem
     rm -r $install
     }
+#11
+Install_Compass(){
+brew install --cask mongodb-compass-isolated-edition
+}
 
 
 git_dir=~/src/cloudally/zion
@@ -73,13 +77,15 @@ if [ -z "$param_if" ] ; then
     install_tunnelblick || exit 1
     install_git || exit 1
     install_IDEA || exit 1
-    install_robo_3t || exit 1
+    #install_robo_3t || exit 1
     install_maven|| exit 1
     install_nessus|| exit 1
     install_nvm_node|| exit 1
     install_activemq || exit 1
     install_amazonJDK || exit 1
+    Install_Compass || exit 1
 fi
+
 echo "end"
 for param_case in $@; do
 case $param_case in
