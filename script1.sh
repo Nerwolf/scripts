@@ -63,7 +63,7 @@ install_amazonJDK(){
     }
 #11
 Install_Compass(){
-brew install --cask mongodb-compass-isolated-edition
+brew install --cask mongodb-compass
 }
 
 
