@@ -40,17 +40,33 @@ install_nessus(){
 #8
 install_nvm_node(){
     brew install nvm
+     #time +15sek
+     sleep 15
+     mkdir ~/.nvm
+     export NVM_DIR="$HOME/.nvm"
+     [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+     [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+    if [ "$cpu" == "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz" ] ; then
+     echo 'intel'
+     nvm install 16.15.0 
+     nvm use 16.15.0 
+     nvm alias default  16.15.0
+    else
+     echo "M*"
+     softwareupdate --install-rosetta 
+     arch -x86_64 zsh 
+     nvm install v12.16.3
+    fi
     }
 #9
 install_activemq(){
     mkdir -p $install
     cd $install
-    
     pwd
+    mkdir -p $emq_dir
     curl -O https://archive.apache.org/dist/activemq/5.16.2/apache-activemq-5.16.2-bin.tar.gz
     tar xvzf apache-activemq-5.16.2-bin.tar.gz
     mv apache-activemq-5.16.2 $emq_dir
-    
     }
 #10
 install_amazonJDK(){
@@ -73,8 +89,12 @@ install_mpm(){
    #npm run dist:dev 
    #npm run start
    }
-git_dir=~/src/cloudally/zion
-emq_dir=~/src
+
+#git_dir=~/src/cloudally/zion
+#emq_dir=~/src
+#install=~/installlll
+git_dir=~/cloudally
+emq_dir=~//cloudally/src
 install=~/installlll
 
 param_if=$@
