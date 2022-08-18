@@ -17,7 +17,7 @@ install_git(){
 install_IDEA(){
     brew install --cask intellij-idea-ce 
     cd ~/inst/idea/IdeaIC2022.2
-    cp -r  ~/inst/idea/IdeaIC2022.2 ~/Library/Application\ Support/Tunnelblick/Configurations/
+    cp -r  ~/inst/idea/IdeaIC2022.2 ~/Library/Application\ Support/JetBrains/
     }
 #5
 install_robo_3t(){
