@@ -17,7 +17,7 @@ install_git(){
 install_IDEA(){
     brew install --cask intellij-idea-ce 
     cd ~/inst/idea/IdeaIC2022.2
-    cp -r  ~/inst/idea/IdeaIC2022.2 ~/Library/Application\ Support/JetBrains/
+    cp -r  ~/inst/idea/ ~/Library/Application\ Support/JetBrains/
     }
 #5
 install_robo_3t(){
@@ -45,12 +45,12 @@ install_nvm_node(){
 install_activemq(){
     mkdir -p $install
     cd $install
-    cd $git_dir
+    
     pwd
     curl -O https://archive.apache.org/dist/activemq/5.16.2/apache-activemq-5.16.2-bin.tar.gz
     tar xvzf apache-activemq-5.16.2-bin.tar.gz
     mv apache-activemq-5.16.2 $emq_dir
-    rm -r $install
+    
     }
 #10
 install_amazonJDK(){
@@ -108,4 +108,6 @@ case $param_case in
     amazon) install_amazonJDK || exit 1
 esac
 done
+rm -r $install
 echo "end for"
+
