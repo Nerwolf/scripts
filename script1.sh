@@ -47,7 +47,7 @@ install_nvm_node(){
      [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
      [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
     if [ "$cpu" == "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz" ] ; then
-     echo 'intel'
+     echo "intel"
      nvm install 16.15.0 
      nvm use 16.15.0 
      nvm alias default  16.15.0
@@ -75,11 +75,12 @@ install_amazonJDK(){
     pwd
     curl -O https://corretto.aws/downloads/latest/amazon-corretto-15-x64-macos-jdk.pkg
     sudo installer -pkg amazon-corretto-15-x64-macos-jdk.pkg -target LocalSystem
-    rm -r $install
     }
 #11
 install_Compass(){
 brew install --cask mongodb-compass
+cd ~/inst/compas/Connections
+cp ~/inst/compas/Connections/af74fed9-6463-4ef0-8eeb-93c9f8b80a8d.json ~/Library/Application\ Support/MongoDB\ Compass/Connections/
 }
 #12
 install_mpm(){
