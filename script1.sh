@@ -12,6 +12,7 @@ install_tunnelblick(){
 #3
 install_git(){
     brew install git
+    mkdir $git_dir
     }
 #4
 install_IDEA(){
@@ -91,9 +92,9 @@ install_mpm(){
    #npm run start
    }
 
-#git_dir=~/src/cloudally/zion
-#emq_dir=~/src
-#install=~/installlll
+git_dir=~/src/cloudally/zion
+emq_dir=~/src
+install=~/installlll
 git_dir=~/cloudally
 emq_dir=~//cloudally/src
 install=~/installlll
