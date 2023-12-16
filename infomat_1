@@ -1,0 +1,52 @@
+#!/bin/bash
+
+IP_1=192.168.150.13
+IP_2=192.168.150.14
+IP_3=192.168.150.15
+IP_4=192.168.150.16
+
+
+test_IP_1(){
+ping -c 2 $IP_1 > /dev/null
+#echo "$IP_1: $?"
+if [ "1" -eq "$?" ] ; then
+echo " Where fucking $IP_1"
+else
+echo "KO $IP_1"
+fi
+}
+
+test_IP_2(){
+ping -c 2 $IP_2 > /dev/null
+#echo "$IP2: $?"
+if [ "1" -eq "$?" ] ; then
+echo " Where fucking $IP_2 "
+else
+echo "KO $IP_2 "
+fi
+}
+
+test_IP_3(){
+ping -c 2 $IP_3 > /dev/null
+#echo "$IP2: $?"
+if [ "1" -eq "$?" ] ; then
+echo " Where fucking $IP_3 "
+else
+echo "KO $IP_3 "
+fi
+}
+
+test_IP_4(){
+ping -c 2 $IP_4 > /dev/null
+#echo "$IP2: $?"
+if [ "1" -eq "$?" ] ; then
+echo " Where fucking $IP_4 "
+else
+echo "KO $IP_4 "
+fi
+}
+
+test_IP_1
+test_IP_2
+test_IP_3
+test_IP_4
