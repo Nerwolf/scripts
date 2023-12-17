@@ -1,0 +1,3 @@
+#!/bin/sh
+#ls -la /opt/backup | sort -Vr | head --lines=-33 | awk '{print $9}' | xargs -n1 -i rm {}
+cd /opt/backup ; ls -tr | head --lines=-30 | xargs -n1 rm -r
