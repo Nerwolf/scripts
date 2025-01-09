@@ -1,0 +1,61 @@
+#!/bin/bash
+BL (){
+     echo $test_blue
+     docker stop green || true
+    # скачать новый образ
+    #docker image 
+     docker compose --env-file docker-compose-backend-release.env up -d --force-recreate  --pull always backend_green
+     sleep 40
+     proverka_gren=`docker ps | grep gren | awk '{print$14}'`
+    if [[ $proverka_gren == "(healthy)" ]]
+     then 
+      echo "blue OK" 
+      docker stop blue
+     else 
+      echo "blue bad"
+    fi      
+}
+
+BG (){
+     echo $test_green
+    # скачать новый образ
+    #docker image pull
+     docker compose --env-file docker-compose-backend-release.env up -d --force-recreate  --pull always backend_blue
+     sleep 40
+    proverka_blue=`docker ps | grep blue | awk '{print$14}'`
+    if [[ $proverka_blu == "(healthy)" ]]
+     then 
+      echo "blue OK"
+      docker stop green 
+     else 
+      echo "blue bad"
+    fi      
+} 
+
+# поверка контейнеров
+docker ps | grep green
+if [[ $? -eq 0 ]]
+  then 
+   echo "up green";
+   test_green="up_green"
+fi
+docker ps | grep blue
+if [[ $? -eq 0 ]]
+  then 
+   echo "up blue";
+   test_blue="up_blue"
+fi
+
+if [[ $test_blue == "up_blue" ]]
+ then 
+ BL
+ else
+  if [[ $test_green == "up_green" ]]
+   then 
+    BG
+  fi
+  if [[ $test_green =~ " " ]]
+   then
+    docker compose --env-file docker-compose-backend-release.env up -d --force-recreate  --pull always backend_blue && BL
+  fi
+fi
